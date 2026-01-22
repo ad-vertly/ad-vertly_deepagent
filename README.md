@@ -1,6 +1,6 @@
 # 🚀🧠 ad-vertly deep agents
 
-This repository is a fork of [LangGraph Deep Agents](https://github.com/langchain-ai/deepagents), customized for use by **ad-vertly**.
+This repository is a fork of [LangGraph Deep Agents](https://github.com/langchain-ai/deepagents), customized for use by **ad-vertly**. An advertising agent build to make advertisers productive. 
 
 Agents can increasingly tackle long-horizon tasks, [with agent task length doubling every 7 months](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/)! But, long horizon tasks often span dozens of tool calls, which present cost and reliability challenges. Popular agents such as [Claude Code](https://code.claude.com/docs) and [Manus](https://www.youtube.com/watch?v=6_BcCthVvb8) use some common principles to address these challenges, including **planning** (prior to task execution), **computer access** (giving the agent access to a shell and a filesystem), and **sub-agent delegation** (isolated task execution). `deepagents` is a simple, open-source agent harness that implements these tools and is easily extensible with your own custom tools, instructions, and choice of LLM.
 
