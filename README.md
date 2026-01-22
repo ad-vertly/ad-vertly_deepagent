@@ -1,4 +1,4 @@
-# 🚀🧠 ad-vertly Deep Agents
+# 🚀🧠 ad-vertly deep agents
 
 This repository is a fork of [LangGraph Deep Agents](https://github.com/langchain-ai/deepagents), customized for use by **ad-vertly**.
 
