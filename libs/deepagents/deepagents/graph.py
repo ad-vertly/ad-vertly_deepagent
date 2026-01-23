@@ -60,7 +60,6 @@ def create_deep_agent(
     debug: bool = False,
     name: str | None = None,
     cache: BaseCache | None = None,
-    trim_tokens_to_summarize: int | None = None,
 ) -> CompiledStateGraph:
     """Create a deep agent.
 
@@ -133,14 +132,6 @@ def create_deep_agent(
         debug: Whether to enable debug mode. Passed through to `create_agent`.
         name: The name of the agent. Passed through to `create_agent`.
         cache: The cache to use for the agent. Passed through to `create_agent`.
-        trim_tokens_to_summarize: Maximum tokens to include when generating conversation
-            summaries. When the conversation history exceeds the summarization trigger,
-            this limits how many tokens are sent to the LLM for summarization.
-
-            If `None` (default), the full conversation history is sent, which may cause
-            'prompt too long' errors if history exceeds model limits. Set to a value
-            below your model's max context (e.g., `170000` for 200k context models)
-            to prevent this.
 
     Returns:
         A configured deep agent.
@@ -187,7 +178,7 @@ def create_deep_agent(
                 backend=backend,
                 trigger=trigger,
                 keep=keep,
-                trim_tokens_to_summarize=trim_tokens_to_summarize,
+                trim_tokens_to_summarize=None,
                 truncate_args_settings=truncate_args_settings,
             ),
             AnthropicPromptCachingMiddleware(unsupported_model_behavior="ignore"),
@@ -219,7 +210,7 @@ def create_deep_agent(
                 backend=backend,
                 trigger=trigger,
                 keep=keep,
-                trim_tokens_to_summarize=trim_tokens_to_summarize,
+                trim_tokens_to_summarize=None,
                 truncate_args_settings=truncate_args_settings,
             ),
             AnthropicPromptCachingMiddleware(unsupported_model_behavior="ignore"),
